@@ -1,18 +1,24 @@
 <?php
 
 namespace App\Http\Controllers;
- //Nama     : M.Faishal Rafid
-     // NIM      : 6706223073
-      //Kelas    : 4603
-      //
+
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\DataTables\UserDataTable;
 
 class UserController extends Controller
 {
-    public function index() {
-        $users = User::all();
-        return view('user.daftarPengguna', compact('users'));
+    // Nama    : M.Faishal Rafid
+    // NIM     : 6706223073
+    // Kelas   : D3IF-4603
+    
+    // public function index() {
+    //     $users = User::all();
+    //     return view('user.daftarPengguna', compact('users'));
+    // }
+    public function index(UserDataTable $dataTable)
+    {
+        return $dataTable->render('user.daftarPengguna');
     }
 
     public function showUser($username) {

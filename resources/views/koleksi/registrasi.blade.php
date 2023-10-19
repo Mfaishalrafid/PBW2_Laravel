@@ -4,7 +4,12 @@
             {{ __('Tambah Koleksi') }}
         </h2>
     </x-slot>
-
+<!-- 
+Nama    : M.Faishal Rafid
+NIM     : 6706223073
+Kelas   : D3IF-4603 
+-->
+@section('content')
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
@@ -14,7 +19,6 @@
                     {{ Session::get('success') }}
                 </div>
                 @endif
-<!-- M.faishal Rafid_6706223073-4603 -->
                     <form action="{{ route('koleksi.store') }}" method="POST">
                         @csrf
                         <!-- Nama Koleksi -->
@@ -56,4 +60,5 @@
             window.history.back();
         }
     </script>
+@endsection
 </x-app-layout>

@@ -5,15 +5,23 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use App\Models\Koleksi;
-//Nama     : M.Faishal Rafid
-     // NIM      : 6706223073
-      //Kelas    : 4603
-      //
+use App\DataTables\KoleksiDataTable;
+
 class KoleksiController extends Controller
 {
-    public function index() {
-        $koleksi = Koleksi::all();
-        return view('koleksi.daftarKoleksi', compact('koleksi'));
+
+    // Nama    : M.Faishal Rafid
+    // NIM     : 6706223073
+    // Kelas   : D3IF-4603
+
+    // public function index() {
+    //     $koleksi = Koleksi::all();
+    //     return view('koleksi.daftarKoleksi', compact('koleksi'));
+    // }
+
+    public function index(KoleksiDataTable $dataTable)
+    {
+        return $dataTable->render('koleksi.daftarKoleksi');
     }
 
     public function show($id)
